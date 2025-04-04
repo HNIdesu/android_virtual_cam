@@ -3,16 +3,20 @@ plugins {
 }
 
 android {
-    compileSdk 31
-
+    compileSdk 35
+    namespace "com.example.vcam"
     defaultConfig {
         applicationId "com.example.vcam"
         minSdk 21
-        targetSdk 26
+        targetSdk 33
         versionCode 28
         versionName "4.4"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
@@ -28,7 +32,6 @@ android {
 }
 
 dependencies {
-    compileOnly 'de.robv.android.xposed:api:82'
-    compileOnly 'de.robv.android.xposed:api:82:sources'
-
+    compileOnly(files("libs/api-82.jar"))
+    compileOnly(files("libs/api-82-sources.jar"))
 }
